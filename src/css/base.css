@@ -1,0 +1,39 @@
+.rollNotice {
+    position: relative;
+    height: 35px;
+    overflow: hidden;
+    background:#fff8d2;
+    border: 1px solid black;
+}
+
+.rollNotice ul {
+    line-height: 32px;
+    height: 32px;
+    margin-top: 1px;
+}
+
+.rollNotice ul li {
+    height: 32px;
+    list-style-type: none;
+    width: 1150px;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: center;
+
+}
+.rollNotice ul li a{
+    padding-left: 20px;
+}
+.rollNotice ul li .content{
+    padding-left: 30px;
+    background: url(../img/icon.png) no-repeat 0 -511px;
+}
+.rollNotice .close{
+    position: absolute;
+    right: calc((100% - 1180px)/2);
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    background: url(../img/icon.png) no-repeat 0 -558px;
+    cursor: pointer;
+}
