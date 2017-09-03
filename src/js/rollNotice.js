@@ -55,25 +55,25 @@ angular.module("myApp", [])
                     } else {
                         $scope.noticeShow = true;
                         if($scope.noticeList.length > 1) {
-                            var settime;
+                            var timeId;
                             $(iElement).hover(function () {
-                                clearInterval(settime);
+                                clearInterval(timeId);
                             }, function () {
-                                settime = setInterval(function () {
-                                    var $first = $(iElement).find("ul:first");
-                                    var height = $first.find("li:first").height(); //获取第一个li的高度
-                                    $first.animate({"marginTop": -height + "px"}, 600, function () {
-                                        $first.css({marginTop: 0}).find("li:first").appendTo($first); //设置上边距为零，为了下一次移动做准备
+                                timeId = setInterval(function () {
+                                    var first = $(iElement).find("ul:first");
+                                    var height = first.find("li:first").height(); //获取第一个li的高度
+                                    first.animate({"marginTop": -height + "px"}, 600, function () {
+                                        first.css({marginTop: 0}).find("li:first").appendTo(first); //设置上边距为零，为了下一次移动做准备
                                     });
                                 }, 3000);
-                            }).trigger("mouseleave"); //trigger()方法的作用是触发被选元素的制定事件类型
+                            })
                         }
                     }
                 }
 
                 $scope.closeNotice = function () {
                     var exp = new Date();
-                    exp.setTime(exp.getTime() + 30 * 1000);
+                    exp.timeId(exp.getTime() + 30 * 1000);
                     document.cookie = "noticeClose=0;expires=" + exp.toGMTString() + ";path=/;";
                     $scope.noticeShow = false;
 

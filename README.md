@@ -1,6 +1,8 @@
 # angular自定义指令
 ## 滚动公告
  - 功能：滚动公告，关闭后30秒不会出现
+ - 展示：<br>
+ ![](/img/demo.gif)<br>
  - 使用方法：`<roll-Notice notice-List="noticeList"></roll-Notice>`
   ```
   $scope.noticeList = [
